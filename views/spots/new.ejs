@@ -1,0 +1,63 @@
+<h1>Add a new spot</h1>
+
+<form method="post" action="/spots">
+
+   <div class="form-group row">
+     <label for="spotname" class="col-sm-2 col-form-label">Spot Name</label>
+     <input type="text" class="form-control" name = "name" id="name" placeholder="Spot name">
+   </div>
+  <div class="form-group row">
+      <label for="neighborhood" class="col-sm-2 col-form-label">Neighborhood</label>
+        <div class="col-sm-10">
+         <input type="text" class="form-control" name="neighborhood" id="neighborhood" placeholder="Neighborhood">
+        </div>
+  </div>
+  <div class="form-group row">
+      <label for="address" class="col-sm-2 col-form-label">Address</label>
+        <div class="col-sm-10">
+         <input type="text" class="form-control" name="address"id="address" placeholder="Address">
+        </div>
+  </div>
+  <div class="form-group row">
+      <label for="inputPassword3" class="col-sm-2 col-form-label">Image url</label>
+        <div class="col-sm-10">
+         <input type="text" class="form-control" name="image"i d="image" placeholder="Url">
+       </div>
+  </div>
+  <div class="form-group row">
+      <label for="inputPassword3" class="col-sm-2 col-form-label">Specialty</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="specialty" id="specialty" placeholder="Specialty">
+    </div>
+  </div>
+  <div class="form-group">
+   <label for="exampleFormControlSelect1">Rating</label>
+   <select  name="rating" class="form-control" id="rating">
+     <option>1</option>
+     <option>2</option>
+     <option>3</option>
+     <option>4</option>
+     <option>5</option>
+   </select>
+ </div>
+ <div class="form-group">
+   <label for="customRange2">Price</label>
+  <input type="range" class="custom-range" min="0" step="0.5" max="5" id="price" name="price">
+  </div>
+<div class="form-group">
+    <label for="exampleFormControlTextarea1">Description</label>
+    <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+  </div>
+<div class="form-group">
+  <div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="open" name="open" value=true>
+  <label class="form-check-label" for="inlineCheckbox1">Open on Sunday?</label>
+</div>
+</div>
+
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Submit</button>
+    </div>
+  </div>
+</form>

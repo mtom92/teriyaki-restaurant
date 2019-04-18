@@ -1,0 +1,76 @@
+<div class="container">
+<div class="container">
+<div class="card text-center">
+  <div class="card-header">
+    <h1> <%= spot.name%></h1>
+  </div>
+  <div class="card-body">
+    <h4 class="card-title"><%= spot.address%></h4>
+    <p class="card-text"><%= spot.description%></p>
+    <img src="<%= spot.image%>" >
+  </div>
+  <div class="card-footer text-muted" style="background-color: #9E32B9;">
+  Specialty: <%= spot.specialty%>
+  </div>
+</div>
+</div>
+<div class="container">
+   <%- include('../partials/map' , { mapkey: mapkey , center: latLong, zoom:17, markers: marker })  %>
+</div>
+
+
+<div class="container">
+  <h3> User reviews</h3>
+
+  <% if(spot.reviews && spot.reviews.length){ %>
+    <% spot.reviews.forEach((r)=>{ %>
+
+
+    <div class="card" style="width: 18rem;">
+       <div class="card-body">
+          <h5 class="card-title"><%= r.name %></h5>
+          <p class="card-text">  <%= r.comment %></p>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+       </div>
+    </div>
+
+    <%}) %>
+  <%} else { %>
+    <h4>Be the first to review <%= spot.name %>!</h4>
+<%  } %>
+
+
+</div>
+<div class="container">
+  <h4> Add a new review</h4>
+</div>
+<div class="container">
+  <form  action="/reviews" method="post">
+<input type="hidden" name="spotId" value="<%= spot.id %>">
+    <div class="form-group row">
+      <label for="yourname" class="col-sm-2 col-form-label">Your name</label>
+      <input type="text" class="form-control" name="name" id="name" placeholder="Your name">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Rating</label>
+        <select  name="rating" class="form-control" id="rating">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+   </div>
+   <div class="form-group">
+       <label for="exampleFormControlTextarea1">Your comment</label>
+       <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
+     </div>
+     <div class="form-group row">
+       <div class="col-sm-10">
+         <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Submit</button>
+       </div>
+     </div>
+  </form>
+</div>
+</div>
